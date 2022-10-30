@@ -1,20 +1,20 @@
-const LOCAL_STORAGE_PREFIX = 'RS_React_Q3';
+const LOCAL_STORAGE_PREFIX = 'SK_ToDo_App';
 
 class StorageWorker {
-  private myStorageSearchPromptKey;
+  private myStorageToDoListKey;
 
   constructor() {
-    this.myStorageSearchPromptKey = `${LOCAL_STORAGE_PREFIX}_SearchPrompt`;
+    this.myStorageToDoListKey = `${LOCAL_STORAGE_PREFIX}_ToDoList`;
   }
 
-  get searchPrompt() {
-    const data = localStorage.getItem(this.myStorageSearchPromptKey);
+  get toDoList() {
+    const data = localStorage.getItem(this.myStorageToDoListKey);
     const res = data ? JSON.parse(data) : {};
     return res;
   }
 
-  set searchPrompt(newValue) {
-    localStorage.setItem(this.myStorageSearchPromptKey, JSON.stringify(newValue));
+  set toDoList(newValue) {
+    localStorage.setItem(this.myStorageToDoListKey, JSON.stringify(newValue));
   }
 
   deleteDataFromStorage = () => {
