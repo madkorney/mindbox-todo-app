@@ -26,8 +26,6 @@ const ToDoItem = ({ listItem, updateHandler }: ToDoItemProps) => {
     <div className="todo-item">
       <ToDoCheckbox isChecked={itemIsCompleted} handler={checkBoxHandler} />
       <div className="todo-item-id">{item.id}</div>
-      <div className="todo-item-id">item-{item.completed.toString()}</div>
-      <div className="todo-item-id">state-{itemIsCompleted.toString()}</div>
       <div className={itemIsCompleted ? 'todo-item-text completed' : 'todo-item-text'}>
         {item.text}
       </div>
