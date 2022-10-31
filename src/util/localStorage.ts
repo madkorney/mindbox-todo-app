@@ -9,7 +9,7 @@ class StorageWorker {
 
   get toDoList() {
     const data = localStorage.getItem(this.myStorageToDoListKey);
-    const res = data ? JSON.parse(data) : {};
+    const res = data ? JSON.parse(data) : null;
     return res;
   }
 
