@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import ToDoList from 'components/ToDoList/toDoList';
 import FilterTabs from 'components/FilterTabs/filterTabs';
 import ActiveItemsCounter from 'components/ActiveItemsCounter/activeItemsCounter';
 import InputNewItem from 'components/InputNewItem/inputNewItem';
 
-import { ToDoListItem, Mock_List, Actions, Filters, ItemsNumberToDisplay } from './data/data';
+import { ToDoListItem, Mock_List, Actions, Filters, TODO_ITEM_HEIGHT_PX } from './data/data';
 import StorageWorker from './util/localStorage';
+import { useWindowSize, Size } from './util/useSize';
 
-import './App.css';
+import './App.scss';
+import './global-styles/_frames.scss';
+
+const initialItemsNumberInList = 10;
 
 const App = () => {
   const [toDoListItems, setToDoListItems] = useState<ToDoListItem[]>(
@@ -22,6 +26,19 @@ const App = () => {
     toDoListItems.filter((item) => !item.completed).length
   );
   const [scrollIndexPosition, setScrollIndexPosition] = useState(0);
+  const [itemsNumberToDisplay, setItemsNumberToDisplay] = useState(initialItemsNumberInList);
+  const windowSize: Size = useWindowSize();
+  const screenDivRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const otherElementsHeightsPx = 275;
+    const height = windowSize.height;
+    if (height) {
+      setItemsNumberToDisplay(
+        Math.trunc((height - otherElementsHeightsPx) / TODO_ITEM_HEIGHT_PX) - 3
+      );
+    }
+  }, [windowSize]);
 
   useEffect(() => {
     const activeItemsNum = toDoListItems.filter((item) => !item.completed).length;
@@ -45,12 +62,12 @@ const App = () => {
   }, [toDoListItems, activeFilter]);
 
   useEffect(() => {
-    if (toDoListItemsFiltered.length < ItemsNumberToDisplay) {
+    if (toDoListItemsFiltered.length < itemsNumberToDisplay) {
       setScrollIndexPosition(0);
-    } else if (toDoListItemsFiltered.length - ItemsNumberToDisplay < scrollIndexPosition) {
-      setScrollIndexPosition(toDoListItemsFiltered.length - ItemsNumberToDisplay);
+    } else if (toDoListItemsFiltered.length - itemsNumberToDisplay < scrollIndexPosition) {
+      setScrollIndexPosition(toDoListItemsFiltered.length - itemsNumberToDisplay);
     }
-  }, [toDoListItemsFiltered, scrollIndexPosition]);
+  }, [toDoListItemsFiltered, scrollIndexPosition, itemsNumberToDisplay]);
 
   useEffect(() => {
     setScrollIndexPosition(0);
@@ -58,6 +75,7 @@ const App = () => {
 
   const clearCompleted = () => {
     const clearedList = toDoListItems.filter((item) => !item.completed);
+    StorageWorker.toDoList = clearedList;
     setToDoListItems(clearedList);
   };
 
@@ -76,7 +94,6 @@ const App = () => {
         if (itemIndex !== -1) {
           const newItem = { ...item! };
           updatedList.splice(itemIndex, 1, newItem);
-          setToDoListItems(updatedList);
         }
         break;
 
@@ -88,21 +105,21 @@ const App = () => {
           completed: false,
         };
         updatedList.push(newItem);
-        setToDoListItems(updatedList);
         break;
 
       case Actions.delete:
         if (itemIndex !== -1) {
           updatedList.splice(itemIndex, 1);
-          setToDoListItems(updatedList);
         }
         break;
     }
+    StorageWorker.toDoList = updatedList;
+    setToDoListItems(updatedList);
   };
 
   const scrollItemsListDown = () => {
     setScrollIndexPosition(
-      Math.min(toDoListItemsFiltered.length - ItemsNumberToDisplay, scrollIndexPosition + 1)
+      Math.min(toDoListItemsFiltered.length - itemsNumberToDisplay, scrollIndexPosition + 1)
     );
   };
 
@@ -110,42 +127,53 @@ const App = () => {
     setScrollIndexPosition(Math.max(0, scrollIndexPosition - 1));
   };
   return (
-    <div className="App">
-      <div className="title">ToDo App</div>
+    <div className="App frame-out">
+      <div className="title">
+        ToDo App
+        <div className="sub-title">classic</div>
+      </div>
 
-      <InputNewItem
-        handler={(newItemTextInput: string) => {
-          updateItemHandler({ newItemText: newItemTextInput, action: Actions.add });
-        }}
-      />
+      <div className="frame-in display">
+        <div className="screen">
+          <div className="screen-container" ref={screenDivRef}>
+            <ActiveItemsCounter
+              activeItemsQty={activeItemsNumber}
+              totalItemsQty={toDoListItems.length}
+            />
 
-      <FilterTabs
-        activeFilter={activeFilter}
-        handler={(newFilter: Filters) => {
-          setActiveFilter(newFilter);
-        }}
-      />
+            <InputNewItem
+              handler={(newItemTextInput: string) => {
+                updateItemHandler({ newItemText: newItemTextInput, action: Actions.add });
+              }}
+            />
 
-      <ToDoList
-        todoList={toDoListItemsFiltered}
-        updateHandler={updateItemHandler}
-        scrollIndexPosition={scrollIndexPosition}
-      />
+            <FilterTabs
+              activeFilter={activeFilter}
+              handler={(newFilter: Filters) => {
+                setActiveFilter(newFilter);
+              }}
+            />
 
-      <div className="list-controls">
-        <ActiveItemsCounter activeItemsQty={activeItemsNumber} />
+            <ToDoList
+              todoList={toDoListItemsFiltered}
+              updateHandler={updateItemHandler}
+              scrollIndexPosition={scrollIndexPosition}
+              itemsToDisplayMax={itemsNumberToDisplay}
+            />
 
-        <button className="btn-clear" onClick={clearCompleted}>
-          clear completed
-        </button>
-
-        <button className="scroll-btn" onClick={scrollItemsListUp}>
-          ▲
-        </button>
-
-        <button className="scroll-btn" onClick={scrollItemsListDown}>
-          ▼
-        </button>
+            <div className="list-controls">
+              <button className="btn-clear" onClick={clearCompleted}>
+                clear completed
+              </button>
+              <button className="scroll-btn" onClick={scrollItemsListUp}>
+                ▲
+              </button>
+              <button className="scroll-btn" onClick={scrollItemsListDown}>
+                ▼
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="git-link">
