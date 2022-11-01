@@ -18,6 +18,7 @@ const InputNewItem = ({ handler }: InputProps) => {
 
   return (
     <form className="input-container" onSubmit={handleSubmit}>
+      <div className="new-label">new task:</div>
       <input
         type="text"
         name="item-input"
@@ -27,7 +28,6 @@ const InputNewItem = ({ handler }: InputProps) => {
           setValue(e.currentTarget.value);
         }}
       />
-
       <input type="submit" className="btn-add-new-item" value="add" />
     </form>
   );
