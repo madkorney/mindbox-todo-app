@@ -5,12 +5,9 @@ export type ToDoListItem = {
 };
 
 export const Mock_List: ToDoListItem[] = [
-  { id: 0, text: 'do the app', completed: false },
-  { id: 1, text: 'style app', completed: false },
-  { id: 2, text: 'submit application', completed: false },
-  { id: 3, text: 'tsask 4', completed: true },
-  { id: 4, text: 'tsask 5', completed: false },
-  { id: 5, text: 'tsask 6', completed: false },
+  { id: 0, text: 'Test task 1', completed: false },
+  { id: 1, text: 'Test task 2', completed: true },
+  { id: 2, text: 'Test task 3', completed: false },
 ];
 
 export enum Actions {
@@ -19,7 +16,7 @@ export enum Actions {
   delete,
 }
 
-export const ItemsNumberToDisplay = 7; // max number of items in todo list for scroll management
+export const TODO_ITEM_HEIGHT_PX = 38; // max number of items in todo list for scroll management
 
 export enum Filters {
   all,
