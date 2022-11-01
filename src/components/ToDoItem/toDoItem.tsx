@@ -35,7 +35,7 @@ const ToDoItem = ({ listItem, updateHandler }: ToDoItemProps) => {
           updateHandler({ item: item, action: Actions.delete });
         }}
       >
-        del
+        🗑
       </button>
     </div>
   );

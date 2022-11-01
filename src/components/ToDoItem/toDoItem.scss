@@ -1,0 +1,58 @@
+@import '../../global-styles/variables';
+@import '../../global-styles/fonts';
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.2rem;
+  border-bottom: 1px dotted $COLOR-FONT-PRIMARY;
+
+  label {
+    width: 1.2rem;
+    font-size: 14px;
+    font-weight: 400;
+    height: 20px;
+    padding: 0;
+    margin:  0;
+  }
+
+  .todo-item-id {
+    display: none;
+    text-align: right;
+    width: 2rem;
+    &::after {
+      content: ".";
+    }
+  }
+
+  .todo-item-text {
+    flex: 1 1;
+    text-align: left;
+    font-family: 'inconsolata 500';
+    height: $ITEM-HEIGHT;
+    padding: 0 10px;
+    padding-top: 6px;
+    overflow: hidden;
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.btn-item-control {
+  margin-left: auto;
+  text-decoration: none;
+  background-color: transparent;
+  color: $COLOR-FONT-PRIMARY;
+  border: 1px solid $COLOR-FONT-PRIMARY;
+  font-family: "Futurama";
+  font-size: 0.8rem;
+
+  &:hover {
+    background-color: $COLOR-FONT-PRIMARY;
+    color: $COLOR-SECONDARY-DARK-XL;
+    cursor: pointer;
+  }
+}
