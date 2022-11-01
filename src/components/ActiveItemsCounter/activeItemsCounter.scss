@@ -1,0 +1,47 @@
+@import '../../global-styles/variables';
+@import '../../global-styles/fonts';
+
+.status-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  color: $COLOR-SECONDARY-DARK-XL;
+  background-color: $COLOR-FONT-PRIMARY;
+  margin-top: 5px;
+  height: 1.6rem;
+  padding-left: 10px;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .output {
+    background-color: $COLOR-SECONDARY-DARK-XL;
+    color: $COLOR-FONT-PRIMARY;
+    font-family: 'inconsolata 500';
+    height: 1.4rem;
+    width: 2rem;
+    padding-left: 16px;
+  }
+
+  .active-items-num-label-short,
+  .all-items-num-label-short {
+    display: none;
+    @media only screen and (max-width: $BREAKPOINT-520) {
+      display: block;
+    }
+  }
+  .all-items-num-label-long  {
+    padding-left: 10px;
+  }
+  .active-items-num-label-long,
+  .all-items-num-label-long {
+    @media only screen and (max-width: $BREAKPOINT-520) {
+      display: none;
+    }
+  }
+}
