@@ -1,6 +1,7 @@
 {
   "name": "mindbox-todo-app",
   "version": "0.1.0",
+  "homepage": "https://madkorney.github.io/mindbox-todo-app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
