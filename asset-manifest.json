@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.278f47fd.css",
-    "main.js": "/static/js/main.3ade4e91.js",
-    "static/media/Inconsolata_Condensed-Medium.ttf": "/static/media/Inconsolata_Condensed-Medium.5bab475b01b245f89528.ttf",
-    "static/media/monoMMM_5.ttf": "/static/media/monoMMM_5.aa89396281d24d77b2c1.ttf",
-    "static/media/fr-bold.ttf": "/static/media/fr-bold.e7dc0e7da5d0b6b85264.ttf",
-    "static/media/fr-fal1.ttf": "/static/media/fr-fal1.6785b8568577471861c3.ttf",
-    "static/media/fr-title.ttf": "/static/media/fr-title.70529ff617360eab0da5.ttf",
-    "static/media/fr-fal2.ttf": "/static/media/fr-fal2.945c3fe95b862b4f8b43.ttf",
-    "index.html": "/index.html",
-    "main.278f47fd.css.map": "/static/css/main.278f47fd.css.map",
-    "main.3ade4e91.js.map": "/static/js/main.3ade4e91.js.map"
+    "main.css": "/mindbox-todo-app/static/css/main.f159f63d.css",
+    "main.js": "/mindbox-todo-app/static/js/main.3ade4e91.js",
+    "static/media/Inconsolata_Condensed-Medium.ttf": "/mindbox-todo-app/static/media/Inconsolata_Condensed-Medium.5bab475b01b245f89528.ttf",
+    "static/media/monoMMM_5.ttf": "/mindbox-todo-app/static/media/monoMMM_5.aa89396281d24d77b2c1.ttf",
+    "static/media/fr-bold.ttf": "/mindbox-todo-app/static/media/fr-bold.e7dc0e7da5d0b6b85264.ttf",
+    "static/media/fr-fal1.ttf": "/mindbox-todo-app/static/media/fr-fal1.6785b8568577471861c3.ttf",
+    "static/media/fr-title.ttf": "/mindbox-todo-app/static/media/fr-title.70529ff617360eab0da5.ttf",
+    "static/media/fr-fal2.ttf": "/mindbox-todo-app/static/media/fr-fal2.945c3fe95b862b4f8b43.ttf",
+    "index.html": "/mindbox-todo-app/index.html",
+    "main.f159f63d.css.map": "/mindbox-todo-app/static/css/main.f159f63d.css.map",
+    "main.3ade4e91.js.map": "/mindbox-todo-app/static/js/main.3ade4e91.js.map"
   },
   "entrypoints": [
-    "static/css/main.278f47fd.css",
+    "static/css/main.f159f63d.css",
     "static/js/main.3ade4e91.js"
   ]
 }
