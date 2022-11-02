@@ -1,7 +1,7 @@
 # ToDo app for Mindbox application
 Simple todo app built with react, react hooks, typescript. bootstrapped with create-react-app, eslint/ptettier enabled.
 
-the task: [https://docs.google.com/document/d/1MVq8VaJAtyAjRE4cQyhomd9IucpQoJNUVJ-W2Qur_Jc/edit](https://docs.google.com/document/d/1MVq8VaJAtyAjRE4cQyhomd9IucpQoJNUVJ-W2Qur_Jc/edit)
+the task: [https://docs.google.com/document/d/1MVq8VaJAtyAjRE4cQyhomd9IucpQoJNUVJ-W2Qur_Jc/edit?usp=sharing](https://docs.google.com/document/d/1MVq8VaJAtyAjRE4cQyhomd9IucpQoJNUVJ-W2Qur_Jc/edit?usp=sharing)
 
 deploy: [https://madkorney.github.io/mindbox-todo-app/](https://madkorney.github.io/mindbox-todo-app/)
 
