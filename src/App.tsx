@@ -28,7 +28,6 @@ const App = () => {
   const [scrollIndexPosition, setScrollIndexPosition] = useState(0);
   const [itemsNumberToDisplay, setItemsNumberToDisplay] = useState(initialItemsNumberInList);
   const windowSize: Size = useWindowSize();
-  const screenDivRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const otherElementsHeightsPx = 275;
@@ -135,7 +134,7 @@ const App = () => {
 
       <div className="frame-in display">
         <div className="screen">
-          <div className="screen-container" ref={screenDivRef}>
+          <div className="screen-container">
             <ActiveItemsCounter
               activeItemsQty={activeItemsNumber}
               totalItemsQty={toDoListItems.length}
