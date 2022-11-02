@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import ToDoList from 'components/ToDoList/toDoList';
 import FilterTabs from 'components/FilterTabs/filterTabs';
