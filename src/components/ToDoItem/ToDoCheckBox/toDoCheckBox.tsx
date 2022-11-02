@@ -12,7 +12,7 @@ const ToDoCheckbox = ({ isChecked, handler }: ToDoCheckboxProps) => {
 
   return (
     <div className="todo-checkbox">
-      <label className="todo-checkbox-label">
+      <label className="todo-checkbox-label" role="item-checkbox">
         <input
           type="checkbox"
           checked={checkboxState}
