@@ -5,7 +5,7 @@ the task: [https://docs.google.com/document/d/1MVq8VaJAtyAjRE4cQyhomd9IucpQoJNUV
 
 deploy: [https://madkorney.github.io/mindbox-todo-app/](https://madkorney.github.io/mindbox-todo-app/)
 
-development done in `dev` branch , Pull Request to main [](), PR is not merged, available for code review.
+development done in `dev` branch , Pull Request to `main` [https://github.com/madkorney/mindbox-todo-app/pull/1](https://github.com/madkorney/mindbox-todo-app/pull/1), PR is not merged, available for code review.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 To run the app in dev mode - clone the code from github, switch to `dev` branch, install dependencies, and run it with `npm run start`.
