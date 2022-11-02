@@ -1,0 +1,23 @@
+@import '../../../global-styles/variables';
+
+.todo-checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: $ITEM-HEIGHT;
+  // border: red 1px solid;
+
+  input {
+    display: none;
+  }
+  .todo-checkbox-label {
+    background-color: transparent;
+    color: $COLOR-FONT-PRIMARY;
+    // border: yellow 1px solid;
+
+    &:hover {
+      cursor: pointer;
+      color: $COLOR-FONT-LIGHT;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@import "./global-styles/variables";
+@import "./global-styles/fonts";
+@import "./global-styles/frames";
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+  width: 80vw;
+  max-width: 1100px;
+  min-width: 320px;
+  margin: 10px auto;
+  min-height: calc(100vh - 100px);
+  background-color: $COLOR-PRIMARY;
+  font-family: "Futurama";
+  color: $COLOR-SECONDARY-DARK-XL;
+
+  .title {
+    font-family: 'Futurama';
+    font-size: 3rem;
+    text-shadow: 2px 1px $COLOR-PRIMARY-LIGHT-XL;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .sub-title {
+    font-family: 'Futurama';
+    font-size: 12px;
+    text-shadow: 1px 0px $COLOR-PRIMARY-LIGHT-XL;
+    text-align: center;
+    text-transform: none;
+  }
+
+  .display {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+
+    .screen {
+      height: calc(100vh - 145px - 100px + 24px);
+      .screen-container {
+        height: calc(100vh - 145px - 100px);
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+
+        .list-controls {
+          margin-top: auto;
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          border-top: 2px solid $COLOR-FONT-PRIMARY;
+          padding-top: 5px;
+
+          .btn-clear {
+            margin-right: auto;
+          }
+        }
+      }
+
+      .btn-clear,
+      .scroll-btn {
+        text-decoration: none;
+        background-color: transparent;
+        color: $COLOR-FONT-PRIMARY;
+        border: 1px solid $COLOR-FONT-PRIMARY;
+        font-family: "Futurama";
+        font-size: 16px;
+
+        &:hover {
+          background-color: $COLOR-FONT-PRIMARY;
+          color: $COLOR-SECONDARY-DARK-XL;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .git-link {
+    margin-top: auto;
+
+    a {
+      color: $COLOR-SECONDARY-DARK-XL;
+      text-decoration: none;
+      font-size: 10px;
+      text-shadow: 1px 1px $COLOR-PRIMARY-LIGHT-XL;
+
+      &:visited,
+      &:link {
+        color: $COLOR-SECONDARY-DARK-XL;
+      }
+
+      &:hover {
+        color: $COLOR-SECONDARY-DARK;
+      }
+    }
+  }
+
+}

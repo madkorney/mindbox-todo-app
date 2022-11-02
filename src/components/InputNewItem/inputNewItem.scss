@@ -1,0 +1,40 @@
+@import '../../global-styles/variables';
+@import '../../global-styles/fonts';
+
+.input-container {
+  margin: 20px auto;
+  color: $COLOR-FONT-PRIMARY;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+
+  .new-label {
+    @media only screen and (max-width: $BREAKPOINT-520) {
+      display: none;
+    }
+  }
+
+  .item-input {
+    background-color: rgba(0,0,0, 0.5);
+    color: $COLOR-FONT-PRIMARY;
+    display:inline-block;
+    flex-grow: 1;
+  }
+
+  .btn-add-new-item {
+    text-decoration: none;
+    background-color: transparent;
+    color: $COLOR-FONT-PRIMARY;
+    border: 1px solid $COLOR-FONT-PRIMARY;
+    font-family: "Futurama";
+    font-size: 16px;
+
+    &:hover {
+      background-color: $COLOR-FONT-PRIMARY;
+      color: $COLOR-SECONDARY-DARK-XL;
+      cursor: pointer;
+    }
+  }
+
+}
